@@ -19,8 +19,47 @@ for (let i = 0; i < numberOfDrumButtons; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function() {
       
         let playSoundButton = this.innerHTML;
+        playSound(playSoundButton);
 
-        switch (playSoundButton) {
+    });
+}
+
+// let audio = new Audio("sounds/tom-1.mp3");
+        // audio.play();
+
+// function subtractNumbers(num1, num2) {
+//     return num1 - num2;
+// }
+
+// function divideNumbers(num1, num2) {
+//     return num1 / num2;
+// }
+
+// function calculator(num1, num2, operator) {
+//     return operator(num1, num2);
+// }
+
+// calculator(10, 5, divideNumbers);
+
+
+// function HouseKeeper(name, age, experience, cleaningRepertoire) {
+//     this.name = name;
+//     this.age = age;
+//     this.experience = experience;
+//     this.cleaningRepertoire = cleaningRepertoire;
+//     this.clean = function() {
+//         alert("Cleaning in progress...");
+//     }
+// }
+// let houseKeeper1 = new HouseKeeper("Alice", 30, 5, ["bathroom", "lobby"]);
+// houseKeeper1.clean();
+
+document.addEventListener("keydown", function(event) {
+    playSound(event.key);
+});
+
+function playSound(key) {
+    switch (key) {
             case "w":
                 let tom1 = new Audio("sounds/tom-1.mp3");
                 tom1.play();
@@ -58,22 +97,6 @@ for (let i = 0; i < numberOfDrumButtons; i++) {
 
             default: console.log(playSoundButton);
         }
-    });
+    
+    
 }
-
-// let audio = new Audio("sounds/tom-1.mp3");
-        // audio.play();
-
-// function subtractNumbers(num1, num2) {
-//     return num1 - num2;
-// }
-
-// function divideNumbers(num1, num2) {
-//     return num1 / num2;
-// }
-
-// function calculator(num1, num2, operator) {
-//     return operator(num1, num2);
-// }
-
-// calculator(10, 5, divideNumbers);
